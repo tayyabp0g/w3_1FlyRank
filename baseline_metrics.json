@@ -1,0 +1,31 @@
+{
+  "assignment": "w04_baseline_score",
+  "lane": "refresh_content_opportunity_scoring",
+  "data": "starter_csv_30000_rows",
+  "rule": {
+    "stale_days_min": 90,
+    "min_impressions_90d": 500,
+    "reason_code": "stale_but_visible",
+    "action_label": "REFRESH_REVIEW",
+    "score_inputs": [
+      "days_since_last_update",
+      "impressions_90d"
+    ]
+  },
+  "signal_verdicts": {
+    "staleness": "CONFIRMED",
+    "volume": "MIXED"
+  },
+  "n_rows": 30000,
+  "n_flagged": 6575,
+  "base_rate": 0.5421,
+  "flagged_decline_rate": 0.6164,
+  "unflagged_decline_rate": 0.5212,
+  "precision_at_k": {
+    "10": 0.9,
+    "50": 0.58,
+    "100": 0.5,
+    "500": 0.446
+  },
+  "note": "label (trend_direction == down) is a proxy used only to grade; never a score input"
+}
